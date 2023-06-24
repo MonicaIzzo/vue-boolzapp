@@ -153,4 +153,11 @@ small a {
     background-color: var(--light-gray);
 }
 
+/* #HEADER MAIN */
+.fa-search,
+.fa-paperclip,
+.fa-ellipsis-vertical {
+    font-size: 24px;
+}
+
 
