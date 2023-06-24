@@ -34,9 +34,9 @@
                     <div id="user-section" class="flex-shirink-0 d-flex justify-content-between">
                         <div class="all-headers">
                             <figure>
-                                <img src="img/avatar_6.jpg" alt="Monica Izzo">
+                                <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
                             </figure>
-                            <div class="h6 all-headers-text">Monica Izzo</div>
+                            <div class="h6 all-headers-text">{{user.name}}</div>
                         </div>
                         <div class="w-25 text-muted d-flex justify-content-around align-items-center" role="button">
                         <!-- icone -->
@@ -68,12 +68,12 @@
                     <!-- contacts list -->
                     <div id="contacts-list" class="flex-grow-1 bg-white overflow-auto">
                         <ul class="m-0 p-0">
-                            <li class="all-headers">
+                            <li class="all-headers" v-for="contact in contacts">
                                 <figure>
-                                    <img src="img/avatar_1.jpg" alt="Boo">
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                 </figure>
                                 <div class="h6 all-headers-text">
-                                    <div>Tizio e Caio</div>
+                                    <div>{{contact.name}}</div>
                                 </div>
                             </li>
                         </ul>
@@ -135,10 +135,11 @@
                 </section>
             </div>
         </main>
-        
     </div>
     <!-- Vue JS-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- data -->
+    <script src="js/data.js"></script>
     <!-- script javascript -->
     <script defer src="js/script.js"></script>
 </body>
