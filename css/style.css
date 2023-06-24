@@ -73,7 +73,7 @@ body {
 #user-section,
 
 /* #MAIN */
-#notification {
+#notifications {
     flex-basis: 70px;
 }
 
@@ -83,7 +83,7 @@ body {
     display: flex;
     align-items: center;
 }
-.all-headers figure{
+.all-headers figure {
     height: 70px;
     padding: 0.5rem;
     margin-bottom: 0;
@@ -96,12 +96,27 @@ body {
     border-radius: 50%;
 }
 
-.all-headers .all-headers-text{
+.all-headers-text{
     margin-left: 0.5rem;
     margin-bottom: 0;
 }
 .fa-solid {
     font-size: 24px;
     margin-right: 20px;
+}
+#notifications .fa-bell-slash {
+    color: #8edafc;
+    line-height: 50px;
+    margin-left: 9px;
+}
+.icon-notifications {
+ background-color: white;
+ display: inline-block;
+ border-radius: 50%;
+ height:50px;
+ width: 50px;
+}
+small a {
+    color: #666;
 }
 
