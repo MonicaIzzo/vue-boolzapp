@@ -160,4 +160,28 @@ small a {
     font-size: 24px;
 }
 
+/* #CHAT */
+.message {
+    display: flex;
+}
+.message.sent {
+    justify-content: flex-end;
+}
+.message.received {
+    justify-content: flex-start;
+}
+.message.sent .message-txt {
+    background-color: #d5f9ba;
+}
+.message.received .message-txt {
+    background-color: white;
+}
+.message.sent .message-txt time {
+    display: block;
+    text-align: right;
+}
+.message small {
+    font-size: 11px;
+}
+
 
