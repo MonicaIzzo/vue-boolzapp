@@ -32,10 +32,31 @@ console.log('Vue OK, Vue');
     const app = Vue.createApp ({
         data() {
             return {
+              currentNumber: null,
                user: data.user,
                contacts: data.contacts
             }
+        },
+
+        computed: {
+          currentContact() {
+            return this.contacts.find(contact => contact.id === this.currentNumber)
+          }
+
+        },
+
+        methods: {
+          renderPicture(person) {
+            return `img/avatar${person.avatar}.jpg`;
+          },
+          setCurrentNumber(number) {
+            this.currentNumber = number;
+          }
+        },
+        created () {
+          this.currentNumber = this.contacts[0].id;
         }
+        
     });
 
     //La monto nell'elemento HTML "radice"
