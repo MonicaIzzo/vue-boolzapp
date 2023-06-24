@@ -69,6 +69,10 @@ body {
 
 /* #CHAT */
 #chat header,
-#chat footer {
-height: 70px;
+#chat footer,
+#user-section,
+/* #MAIN */
+#notification {
+flex-basis: 70px;
 }
+
