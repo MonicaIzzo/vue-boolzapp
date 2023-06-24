@@ -13,7 +13,7 @@ Vi ricordo che Milestone 5 è opzionale e che se ne aveste voglia abbiamo ulteri
   - Preparo la parte statica in HTML e CSS
   - Copio il file data (ho scelto di importare il file data dall'esterno per avere un file script più semplice da leggere)
 - **2 MILESTONE**
-  - 
+  - Userò l'ID come logica in tutto lo script per una maggiore coerenza con la prassi comune
 - **3 MILESTONE**
   - 
   **4 MILESTONE**

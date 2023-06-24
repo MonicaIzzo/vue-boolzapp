@@ -74,6 +74,11 @@ body {
     flex-basis: 70px;
 }
 
+#contacts-list {
+    /* non capisco come mai funziona e se invece tolgo mi nasconde lo scroll (non mi trovo con i calcoli */
+   height: 100px;
+}
+
 /* #ALL HEADERS */
 .all-headers {
     height: 100%;
@@ -144,6 +149,11 @@ small a {
 
 
 /* #CONTACT LIST */
+contacts-list {
+    height: 30px;
+}
+
+
 #contacts-list li {
     border-bottom: 1px solid #aaa;
 }
