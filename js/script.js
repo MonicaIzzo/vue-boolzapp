@@ -32,6 +32,7 @@ console.log('Vue OK, Vue');
     const app = Vue.createApp ({
         data() {
             return {
+              newMessage: '',
               currentNumber: null,
                user: data.user,
                contacts: data.contacts
@@ -51,6 +52,26 @@ console.log('Vue OK, Vue');
           },
           setCurrentNumber(number) {
             this.currentNumber = number;
+          },
+          sendMessage () {
+            if(!this.newMessage) return;
+            const message = {
+              id: new Date().getTime(),
+              date: new Date().toLocalString(),
+              message: this.newMessage,
+              status: 'send'
+            };
+            this.currentContact.message.push(message)
+            this.message = "";
+            setTimeout(() => {
+              const replay = {
+                id: new Date().getTime(),
+                date: new Date().toLocalString(),
+                message: 'ok!'
+                status: 'received'
+              }
+              this.currentContact.message.push(play);
+            }, 1000 );
           }
         },
         created () {
