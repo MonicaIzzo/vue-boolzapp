@@ -104,6 +104,9 @@ body {
     font-size: 24px;
     margin-right: 20px;
 }
+
+/* #NOTIFICATIONS */
+
 #notifications .fa-bell-slash {
     color: #8edafc;
     margin-left: 18px;
@@ -121,4 +124,19 @@ body {
 small a {
     color: #666;
 }
+
+/* #SEARCH */
+#search-contacts {
+    position: relative;
+}
+
+#search-contacts .fa-magnifying-glass {
+ position: absolute;
+ top: 16px;
+ left: 16px;
+}
+.form-control {
+    padding: .375rem 2.75rem;
+}
+
 
