@@ -60,3 +60,15 @@ body {
 .bg-chat-color {
     background-color: var(--bg-chat);
 }
+.bg-light-blue {
+    background-color: var(--light-blue);
+}
+.bg-chat-image {
+    background-image: url('../img/mine.jpg');
+}
+
+/* #CHAT */
+#chat header,
+#chat footer {
+height: 70px;
+}
