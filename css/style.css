@@ -110,11 +110,9 @@ body {
 }
 .icon-notifications {
  background-color: white;
- display: inline-block;
  border-radius: 50%;
  height:50px;
  width: 50px;
- flex-shrink: 0;
  margin-left: 0.5rem;
  display: flex;
  align-items: center;
