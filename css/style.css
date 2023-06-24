@@ -43,5 +43,20 @@ box-sizing: border-box;
 body {
     height: 100vh;
     background-image: linear-gradient(var(--green) 15%, var(--bg-gray) 15%);
+}
 
+#root .container {
+    height: 90%;
+}
+
+#chat {
+    background-color: var(--bg-chat);
+}
+
+.bg-light-gray {
+    background-color: var(--light-gray);
+}
+
+.bg-chat-color {
+    background-color: var(--bg-chat);
 }
