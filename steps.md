@@ -11,7 +11,7 @@ Vi ricordo che Milestone 5 è opzionale e che se ne aveste voglia abbiamo ulteri
 
 - **1 MILESTONE**
   - Preparo la parte statica in HTML e CSS
-  - Copio il file data
+  - Copio il file data (ho scelto di importare il file data dall'esterno per avere un file script più semplice da leggere)
 - **2 MILESTONE**
   - 
 - **3 MILESTONE**
