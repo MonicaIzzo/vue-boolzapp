@@ -34,15 +34,19 @@ console.log('Vue OK, Vue');
             return {
               newMessage: '',
               currentNumber: null,
-               user: data.user,
-               contacts: data.contacts
+              user: data.user,
+              contacts: data.contacts
             }
         },
 
         computed: {
           currentContact() {
             return this.contacts.find(contact => contact.id === this.currentNumber)
-          }
+          },
+
+          currentChat() {
+            return this.currentContact.massage;
+          },
 
         },
 
@@ -53,25 +57,28 @@ console.log('Vue OK, Vue');
           setCurrentNumber(number) {
             this.currentNumber = number;
           },
-          sendMessage () {
-            if(!this.newMessage) return;
+
+          addMessage(newMessage, status) {
             const message = {
               id: new Date().getTime(),
               date: new Date().toLocalString(),
-              message: this.newMessage,
-              status: 'send'
+              message,
+              status
             };
-            this.currentContact.message.push(message)
-            this.message = "";
+
+            this.currentChat.message.push(newMessage);
+
+          },
+
+          sendMessage () {
+            if(!this.newMessage) return;
+           
+            this.addMessage(this.newMessage, "sent");
+            this.newMessage ="";
+            
             setTimeout(() => {
-              const replay = {
-                id: new Date().getTime(),
-                date: new Date().toLocalString(),
-                message: 'ok!'
-                status: 'received'
-              }
-              this.currentContact.message.push(play);
-            }, 1000 );
+              this.addMessage("ok", "received");
+              }, 1000 );
           }
         },
         created () {

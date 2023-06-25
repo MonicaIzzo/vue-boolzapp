@@ -85,10 +85,10 @@
                     <header class="bg-light-gray flex-shirink-0 d-flex justify-content-between">
                         <div class="all-headers">
                             <figure>
-                                <img :src="renderPicture(contacts[0])" :alt="contacts[0].name">
+                                <img :src="renderPicture(currentContact)" :alt="currentContact.name">
                             </figure>
                             <div class="h6 all-headers-text">
-                                <div>{{contacts[0].name}}</div>
+                                <div>{{currentContact.name}}</div>
                                 <div class="mb-o fw-light">
                                     <small><a href="#">Ultimo accesso:</a></small>
                                 </div>
@@ -103,10 +103,10 @@
 <!-- CHAT MESSAGE-->
                     <section class="flex-grow-1 overflow-auto bg-chat-image">
                         <ul class="px-3">
-                            <li v-for="message in currentContact.messages" class="message p-3" :class="message.status">
+                            <li v-for="message in currentContact.message" class="message p-3" :class="message.status">
                                 <div class="message-txt p-2 rounded-3">
                                     <p class="mb-0">{{message.message}}</p>
-                                    <time datatime="2023-06-24T14:36"><small>{{message.date}}</small></time>
+                                    <span><small>{{message.date}}</small></span>
                                 </div>
                             </li>
                         </ul>
