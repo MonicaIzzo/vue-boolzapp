@@ -12,11 +12,20 @@ Vi ricordo che Milestone 5 è opzionale e che se ne aveste voglia abbiamo ulteri
 - **2 MILESTONE**
   - Userò l'ID come logica in tutto lo script per una maggiore coerenza con la prassi comune
 - **3 MILESTONE**
-  - 
+  ? - Aggiunta di un messaggio: in console visualizzo dinamicamente il valore del campo riempito, ma non riesco a generare il nuovo messaggio. Probalbilmente c'è ub errore nel methods in "addMESSAGE".
+  ? - Risposta dall’interlocutore: idem il problema sta in "addMESSAGE".
   **4 MILESTONE**
-  - 
+  ? - Ricerca utenti: Sicuramente si fa con "find" devo andarmi a vedere l'esercizio precedente (To do List) - (che non ho fatto, se ci riesco, ci ritrono su) 
  **5 MILESTONE**
-  - 
+  ? - Cancella messaggio: idem per sopra è una funzione che abbiamo visto in TO DO LIST.
+  
+**BONUS**
+Dei bonus che vorrei fare:
+? - FARE LA INTRO DELLA CHAT come ha fatto Marco L. e sicuramente devo modificare il methods(created) Non fargli settare al caricamento dello script il primo contatto corrente.
+? - FARE IL RESPONSIVE questo è facile, devo cambiare le col in class nell'HTML secondo la convenzione di Bootstrap.
+? - Se scrivo il messaggio nel campo testo l'icona accanto deve cambiare. (NON HO IDEA DI COME FARLO)
+? - Mentre l'interlocutore mi scrive sotto alla contact list deve apparirmi il testo (sta scrivendo). Questo forse saprei come farlo, sicuramente andrà aggiunto nella methods in "addMESSAGE" e in setTimeout per fargli fare la cosa. Nell'HTML devo aggiungere lo <span> con dati dinamici.
+? - ELIMINAZIONE DEL CONTATTO idem con l'esercizio fatto TO DO LIST (se riesco a farlo, tornerò qui ad aggiungere).
   
 */
 
