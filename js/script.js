@@ -26,7 +26,6 @@ Dei bonus che vorrei fare:
 ? - Se scrivo il messaggio nel campo testo l'icona accanto deve cambiare. (NON HO IDEA DI COME FARLO)
 ? - Mentre l'interlocutore mi scrive sotto alla contact list deve apparirmi il testo (sta scrivendo). Questo forse saprei come farlo, sicuramente andrà aggiunto nella methods in "addMESSAGE" e in setTimeout per fargli fare la cosa. Nell'HTML devo aggiungere lo <span> con dati dinamici.
 ? - ELIMINAZIONE DEL CONTATTO idem con l'esercizio fatto TO DO LIST (se riesco a farlo, tornerò qui ad aggiungere).
-  
 */
 
 
