@@ -45,7 +45,7 @@ console.log('Vue OK, Vue');
           },
 
           currentChat() {
-            return this.currentContact.massage;
+            return this.currentContact.massages;
           },
 
         },
@@ -58,10 +58,10 @@ console.log('Vue OK, Vue');
             this.currentNumber = number;
           },
 
-          addMessage(newMessage, status) {
-            const message = {
+          addMessage(message, status) {
+            const newMessage = {
               id: new Date().getTime(),
-              date: new Date().toLocalString(),
+              date: "new Date().toLocalString()",
               message,
               status
             };
@@ -77,7 +77,7 @@ console.log('Vue OK, Vue');
             this.newMessage ="";
             
             setTimeout(() => {
-              this.addMessage("ok", "received");
+              this.addMessage("ok!", "received");
               }, 1000 );
           }
         },

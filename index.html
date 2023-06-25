@@ -103,7 +103,7 @@
 <!-- CHAT MESSAGE-->
                     <section class="flex-grow-1 overflow-auto bg-chat-image">
                         <ul class="px-3">
-                            <li v-for="message in currentContact.message" class="message p-3" :class="message.status">
+                            <li v-for="message in currentContact.messages" class="message p-3" :class="message.status">
                                 <div class="message-txt p-2 rounded-3">
                                     <p class="mb-0">{{message.message}}</p>
                                     <span><small>{{message.date}}</small></span>
