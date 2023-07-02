@@ -61,19 +61,7 @@ console.log('Vue OK, Vue');
           setCurrentNumber(number) {
             this.currentNumber = number;
           },
-
-          addMessage(message, status) {
-            const newMessage = {
-              id: new Date().getTime(),
-              date: "new Date().toLocalString()",
-              message,
-              status
-            };
-
-            this.currentChat.message.push(newMessage);
-
-          },
-
+          
           sendMessage() {
             if(!this.newMessage) return;
               const message = {
@@ -84,16 +72,18 @@ console.log('Vue OK, Vue');
               };
             
             this.currentChat.push(message)
-
-
-
-           
-            /* this.currentChat(this.newMessage, "sent");
-            this.newMessage ="";
+            this.newMessage ="";  
             
             setTimeout(() => {
-              this.addMessage("ok!", "received");
-              }, 1000 );*/
+              const replay = {
+                id: new Date().getTime(),
+                date: Date().toLocaleString(),
+                message: 'ok',
+                status: 'received'
+                 }
+                 this.currentChat.push(replay);
+              }, 1000 );
+
           }
         }, 
         created () {
