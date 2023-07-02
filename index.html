@@ -62,12 +62,14 @@
                     <!-- search -->
                     <div id="search-contacts" class="p-2 flex-shirink-0">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input class="form-control" type="text" value="">
+                        <input
+                        v-model.trim="searchText"
+                        class="form-control" type="text">
                     </div>
                     <!-- contacts list -->
                     <div id="contacts-list" class="flex-grow-1 bg-white overflow-auto">
                         <ul class="m-0 p-0">
-                            <li v-for="contact in contacts" class="all-headers" @click="setCurrentNumber(contact.id)">
+                            <li v-for="contact in filteredContacts" class="all-headers" @click="setCurrentNumber(contact.id)">
                                 <figure>
                                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                 </figure>

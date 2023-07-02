@@ -12,16 +12,16 @@ Vi ricordo che Milestone 5 è opzionale e che se ne aveste voglia abbiamo ulteri
 - **2 MILESTONE**
   - Userò l'ID come logica in tutto lo script per una maggiore coerenza con la prassi comune
 - **3 MILESTONE**
-  ? - Aggiunta di un messaggio: in console visualizzo dinamicamente il valore del campo riempito, ma non riesco a generare il nuovo messaggio. Probalbilmente c'è ub errore nel methods in "addMESSAGE".
-  ? - Risposta dall’interlocutore: idem il problema sta in "addMESSAGE".
-  **4 MILESTONE**
-  ? - Ricerca utenti: Sicuramente si fa con "filter" devo andarmi a vedere l'esercizio precedente (To do List) - (che non ho finito) 
- **5 MILESTONE**
-  ? - Cancella messaggio: idem per sopra è una funzione che abbiamo visto in TO DO LIST.
+  - Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+  - Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+- **4 MILESTONE**
+  - Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+- **5 MILESTONE**
+  ? - Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato (non fatto).
   
 **BONUS**
 Dei bonus che vorrei fare:
-? - FARE LA INTRO DELLA CHAT come ha fatto Marco L. e sicuramente devo modificare il methods(created) Non fargli settare al caricamento il primo contatto corrente.
+? - FARE LA INTRO DELLA CHAT come ha fatto Marco L. e sicuramente devo modificare created e non fargli settare al caricamento del primo contatto corrente.
 ? - FARE IL RESPONSIVE questo è facile, devo cambiare le col in class nell'HTML secondo la convenzione di Bootstrap.
 ? - Se scrivo il messaggio nel campo testo l'icona accanto deve cambiare. (sicuramente è una funzione FOCUS con il ref="" da inserire in HTML)
 ? - Mentre l'interlocutore mi scrive sotto alla contact list deve apparirmi il testo (sta scrivendo). Questo forse saprei come farlo, sicuramente andrà aggiunto nella methods in "addMESSAGE" e in setTimeout. Nell'HTML devo aggiungere lo <span> con dati dinamici.
@@ -36,13 +36,13 @@ console.log('Vue OK, Vue');
     const app = Vue.createApp ({
         data() {
             return {
+              searchText: '',
               newMessage: '',
               currentNumber: null,
               user: data.user,
               contacts: data.contacts
             }
         },
-
         computed: {
           currentContact() {
             return this.contacts.find(contact => contact.id === this.currentNumber)
@@ -51,9 +51,15 @@ console.log('Vue OK, Vue');
           currentChat() {
             return this.currentContact.messages;
           },
+          filteredContacts() {
+            const term = this.searchText.toLowerCase();
 
+
+            return this.contacts.filter(contact => {
+              return contact.name.toLowerCase().includes(term);
+            });
+          },
         },
-
         methods: {
           renderPicture(person) {
             return `img/avatar${person.avatar}.jpg`;
@@ -61,7 +67,6 @@ console.log('Vue OK, Vue');
           setCurrentNumber(number) {
             this.currentNumber = number;
           },
-          
           sendMessage() {
             if(!this.newMessage) return;
               const message = {
@@ -70,7 +75,6 @@ console.log('Vue OK, Vue');
                 message: this.newMessage,
                 status: 'sent'
               };
-            
             this.currentChat.push(message)
             this.newMessage ="";  
             
