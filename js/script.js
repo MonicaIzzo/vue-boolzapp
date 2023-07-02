@@ -27,13 +27,9 @@ Dei bonus che vorrei fare:
 ? - Mentre l'interlocutore mi scrive sotto alla contact list deve apparirmi il testo (sta scrivendo). Questo forse saprei come farlo, sicuramente andrà aggiunto nella methods in "addMESSAGE" e in setTimeout. Nell'HTML devo aggiungere lo <span> con dati dinamici.
 ? - ELIMINAZIONE DEL CONTATTO idem con l'esercizio fatto TO DO LIST (se riesco a finirlo, tornerò qui ad aggiungerlo).
 */
-
-
 // # Preparo la parte statica in HTML e CSS
 
-
 // # verifiche JS
-console.log('JS OK');
 console.log('Vue OK, Vue');
 
 // # inizializzo Vue JS
@@ -53,7 +49,7 @@ console.log('Vue OK, Vue');
           },
 
           currentChat() {
-            return this.currentContact.massages;
+            return this.currentContact.messages;
           },
 
         },
@@ -78,17 +74,28 @@ console.log('Vue OK, Vue');
 
           },
 
-          sendMessage () {
+          sendMessage() {
             if(!this.newMessage) return;
+              const message = {
+                id: new Date().getTime(),
+                date: Date().toLocaleString(),
+                message: this.newMessage,
+                status: 'sent'
+              };
+            
+            this.currentChat.push(message)
+
+
+
            
-            this.addMessage(this.newMessage, "sent");
+            /* this.currentChat(this.newMessage, "sent");
             this.newMessage ="";
             
             setTimeout(() => {
               this.addMessage("ok!", "received");
-              }, 1000 );
+              }, 1000 );*/
           }
-        },
+        }, 
         created () {
           this.currentNumber = this.contacts[0].id;
         }
