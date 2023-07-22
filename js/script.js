@@ -30,71 +30,68 @@ Dei bonus che vorrei fare:
 // # Preparo la parte statica in HTML e CSS
 
 // # verifiche JS
-console.log('Vue OK, Vue');
+console.log("Vue OK, Vue");
 
 // # inizializzo Vue JS
-    const app = Vue.createApp ({
-        data() {
-            return {
-              searchText: '',
-              newMessage: '',
-              currentNumber: null,
-              user: data.user,
-              contacts: data.contacts
-            }
-        },
-        computed: {
-          currentContact() {
-            return this.contacts.find(contact => contact.id === this.currentNumber)
-          },
+const app = Vue.createApp({
+  data() {
+    return {
+      searchText: "",
+      newMessage: "",
+      currentNumber: null,
+      user: data.user,
+      contacts: data.contacts,
+    };
+  },
+  computed: {
+    currentContact() {
+      return this.contacts.find((contact) => contact.id === this.currentNumber);
+    },
 
-          currentChat() {
-            return this.currentContact.messages;
-          },
-          filteredContacts() {
-            const term = this.searchText.toLowerCase();
+    currentChat() {
+      return this.currentContact.messages;
+    },
+    filteredContacts() {
+      const term = this.searchText.toLowerCase();
 
+      return this.contacts.filter((contact) => {
+        return contact.name.toLowerCase().includes(term);
+      });
+    },
+  },
+  methods: {
+    renderPicture(person) {
+      return `img/avatar${person.avatar}.jpg`;
+    },
+    setCurrentNumber(number) {
+      this.currentNumber = number;
+    },
+    sendMessage() {
+      if (!this.newMessage) return;
+      const message = {
+        id: new Date().getTime(),
+        date: Date().toLocaleString(),
+        message: this.newMessage,
+        status: "sent",
+      };
+      this.currentChat.push(message);
+      this.newMessage = "";
 
-            return this.contacts.filter(contact => {
-              return contact.name.toLowerCase().includes(term);
-            });
-          },
-        },
-        methods: {
-          renderPicture(person) {
-            return `img/avatar${person.avatar}.jpg`;
-          },
-          setCurrentNumber(number) {
-            this.currentNumber = number;
-          },
-          sendMessage() {
-            if(!this.newMessage) return;
-              const message = {
-                id: new Date().getTime(),
-                date: Date().toLocaleString(),
-                message: this.newMessage,
-                status: 'sent'
-              };
-            this.currentChat.push(message)
-            this.newMessage ="";  
-            
-            setTimeout(() => {
-              const replay = {
-                id: new Date().getTime(),
-                date: Date().toLocaleString(),
-                message: 'ok',
-                status: 'received'
-                 }
-                 this.currentChat.push(replay);
-              }, 1000 );
+      setTimeout(() => {
+        const replay = {
+          id: new Date().getTime(),
+          date: Date().toLocaleString(),
+          message: "ok",
+          status: "received",
+        };
+        this.currentChat.push(replay);
+      }, 1000);
+    },
+  },
+  created() {
+    this.currentNumber = this.contacts[0].id;
+  },
+});
 
-          }
-        }, 
-        created () {
-          this.currentNumber = this.contacts[0].id;
-        }
-        
-    });
-
-    //La monto nell'elemento HTML "radice"
-    app.mount('#root');
+//La monto nell'elemento HTML "radice"
+app.mount("#root");
