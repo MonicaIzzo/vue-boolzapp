@@ -31,6 +31,7 @@ Dei bonus che vorrei fare:
 
 // # verifiche JS
 console.log("Vue OK, Vue");
+const dt = luxon.DateTime;
 
 // # inizializzo Vue JS
 const app = Vue.createApp({
@@ -70,7 +71,10 @@ const app = Vue.createApp({
       if (!this.newMessage) return;
       const message = {
         id: new Date().getTime(),
-        date: Date().toLocaleString(),
+        date: dt
+          .now()
+          .setLocale("it")
+          .toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
         message: this.newMessage,
         status: "sent",
       };
@@ -80,7 +84,10 @@ const app = Vue.createApp({
       setTimeout(() => {
         const replay = {
           id: new Date().getTime(),
-          date: Date().toLocaleString(),
+          date: dt
+            .now()
+            .setLocale("it")
+            .toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
           message: "ok",
           status: "received",
         };
